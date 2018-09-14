@@ -3,7 +3,7 @@
  * Plugin Name: QR-Code Block
  * Plugin URI: https://wordpress.org/plugins/qr-code-block/
  * Description: QR-Code Blocks for the Gutenberg Editor.
- * Version: 1.1.0
+ * Version: 2.0.0
  * Author: Sören Wrede
  * Text Domain: qr-code-block
  * License: GPL v3
@@ -24,30 +24,12 @@
  * along with QR Code Block. If not, see <http://www.gnu.org/licenses/>.
  */
 
-defined( 'ABSPATH' ) || exit;
-
-add_action( 'enqueue_block_editor_assets', 'qr_code_block_editor_assets' );
-/**
- * Enqueue Editor JS
- */
-function qr_code_block_editor_assets() {
-	wp_enqueue_script(
-		'qr-code-block',
-		plugins_url( '/assets/block.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( plugin_dir_path( __FILE__ ) . '/assets/block.js' )
-	);
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-add_action( 'enqueue_block_assets', 'qr_code_block_assets' );
 /**
- * Enqueue JS
+ * Block Initializer.
  */
-function qr_code_block_assets() {
-	wp_enqueue_script(
-		'qrjs2',
-		plugins_url( '/assets/renderQrCode.js', __FILE__ ),
-		array(),
-		filemtime( plugin_dir_path( __FILE__ ) . '/assets/renderQrCode.js' )
-	);
-}
+require_once plugin_dir_path( __FILE__ ) . 'src/init.php';

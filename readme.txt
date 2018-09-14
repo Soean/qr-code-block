@@ -3,9 +3,9 @@ Contributors: soean
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: qrcode, qr code, gutenberg, block
-Requires at least: 4.8
-Tested up to: 4.8.2
-Stable tag: 1.1.0
+Requires at least: 4.9.8
+Tested up to: 4.9.8
+Stable tag: 2.0
 Requires PHP: 5.2.4
 
 Create QR-Code Blocks in the Gutenberg Editor.
@@ -22,6 +22,8 @@ Features:
 * Change the background
 
 == Changelog ==
+
+= 2.0.0 =
 
 = 1.1.0 =
 * Use qrjs2 for QR Codes, no API
